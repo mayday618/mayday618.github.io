@@ -12,7 +12,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -56,7 +72,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
@@ -83,7 +99,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hfzh Blog">
-<meta property="og:url" content="http://yoursite.com/tags/HIN/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/hin/index.html">
 <meta property="og:site_name" content="Hfzh Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -117,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/HIN/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/hin/"/>
 
 
 
 
 
-  <title>标签: HIN | Hfzh Blog</title>
+  <title>标签: hin | Hfzh Blog</title>
   
 
 
@@ -134,6 +150,7 @@
 
 
 </head>
+
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -224,7 +241,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>HIN<small>标签</small>
+        <h1>hin<small>标签</small>
         </h1>
       </div>
 
@@ -236,9 +253,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/01/06/异质网络初探/" itemprop="url">
+            <a class="post-title-link" href="/2018/01/11/异质网络初探2/" itemprop="url">
               
-                <span itemprop="name">异质网络初探</span>
+                <span itemprop="name">异质网络初探2</span>
               
             </a>
         
@@ -246,9 +263,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-06T16:38:55+08:00"
-              content="2018-01-06" >
-          01-06
+              datetime="2018-01-11T16:04:20+08:00"
+              content="2018-01-11" >
+          01-11
         </time>
       </div>
 
@@ -400,7 +417,6 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -408,7 +424,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  
 
 
 
@@ -579,8 +595,41 @@
 
   
 
-</body>
+  
+<div id="hexo-helper-live2d">
+  <canvas id="live2dcanvas" width="150" height="300"></canvas>
+</div>
+<style>
+  #live2dcanvas{
+    position: fixed;
+    width: 150px;
+    height: 300px;
+    opacity:0.7;
+    right: 0px;
+    z-index: 999;
+    pointer-events: none;
+    bottom: -20px;
+  }
+</style>
+<script type="text/javascript" src="/live2d/device.min.js"></script>
+<script type="text/javascript">
+const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
+(function(){
+  if((typeof(device) != 'undefined') && (device.mobile())){
+    document.getElementById("live2dcanvas").style.width = '75px';
+    document.getElementById("live2dcanvas").style.height = '150px';
+  }else
+    if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
+  loadScript("/live2d/script.js", function(){loadlive2d("live2dcanvas", "/live2d/assets/wanko.model.json", 0.5);});
+})();
+</script>
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+  </body>
 </html>
 <!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/src/love.js"></script>
->
