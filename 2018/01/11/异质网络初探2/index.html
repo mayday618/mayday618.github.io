@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hin,论文," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hfzh Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="下面对《A Survey of Heterogeneous Information Network Analysis》一文中第3部分RESEARCH DEVELOPMENTS进行阅读 引言作者对hin的数据挖掘任务分为了7类，如下图所示  A 相似性度量分为两种方法：基于特征的和基于连接的  基于特征的使用特征值，有余弦相似性，皮尔森相似性等 基于连接的使用图中的连接信息  在HIN上进行相似性度">
+<meta name="keywords" content="hin,论文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异质网络初探2">
+<meta property="og:url" content="http://yoursite.com/2018/01/11/异质网络初探2/index.html">
+<meta property="og:site_name" content="Hfzh Blog">
+<meta property="og:description" content="下面对《A Survey of Heterogeneous Information Network Analysis》一文中第3部分RESEARCH DEVELOPMENTS进行阅读 引言作者对hin的数据挖掘任务分为了7类，如下图所示  A 相似性度量分为两种方法：基于特征的和基于连接的  基于特征的使用特征值，有余弦相似性，皮尔森相似性等 基于连接的使用图中的连接信息  在HIN上进行相似性度">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/1.11-hin/hin-category.PNG">
+<meta property="og:updated_time" content="2018-01-11T11:23:17.011Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="异质网络初探2">
+<meta name="twitter:description" content="下面对《A Survey of Heterogeneous Information Network Analysis》一文中第3部分RESEARCH DEVELOPMENTS进行阅读 引言作者对hin的数据挖掘任务分为了7类，如下图所示  A 相似性度量分为两种方法：基于特征的和基于连接的  基于特征的使用特征值，有余弦相似性，皮尔森相似性等 基于连接的使用图中的连接信息  在HIN上进行相似性度">
+<meta name="twitter:image" content="http://yoursite.com/images/1.11-hin/hin-category.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/11/异质网络初探2/"/>
+
+
+
+
+
+  <title>异质网络初探2 | Hfzh Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+	</div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hfzh Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/11/异质网络初探2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hfzh">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hfzh Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">异质网络初探2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-11T16:04:20+08:00">
+                2018-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>下面对《A Survey of Heterogeneous Information Network Analysis》一文中第3部分RESEARCH DEVELOPMENTS进行阅读</p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>作者对hin的数据挖掘任务分为了7类，如下图所示</p>
+<p><img src="/images/1.11-hin/hin-category.PNG" alt="example"></p>
+<h3 id="A-相似性度量"><a href="#A-相似性度量" class="headerlink" title="A 相似性度量"></a>A 相似性度量</h3><p>分为两种方法：基于特征的和基于连接的</p>
+<ul>
+<li>基于特征的使用特征值，有余弦相似性，皮尔森相似性等</li>
+<li>基于连接的使用图中的连接信息</li>
+</ul>
+<p>在HIN上进行相似性度量的限制是元路径，因为不同元路径语义不同。</p>
+<p>下面列出相似性的方法</p>
+<ul>
+<li>PathSim基于对称路径来衡量同种类型节点</li>
+<li>HeteSim衡量不同类型节点相似性</li>
+<li>AvgSim使用两个对称Random Walk来衡量相似性</li>
+<li>后来又加入了其他信息如社交影响来衡量相似性</li>
+</ul>
+<h3 id="B-聚类"><a href="#B-聚类" class="headerlink" title="B 聚类"></a>B 聚类</h3><ul>
+<li>传统聚类是基于目标特征，HIN聚类使用丰富的属性信息。</li>
+<li>文本信息在HIN挖掘中同样扮演着重要角色</li>
+<li>同样加入了用户指导信息</li>
+<li>聚类常常和其他挖掘任务集合在一起</li>
+<li>边缘点检测和聚类任务有强相关性。</li>
+</ul>
+<h3 id="C-分类"><a href="#C-分类" class="headerlink" title="C 分类"></a>C 分类</h3><p>传统ML方法认为目标之间相互独立同分布，然而现实中目标之间相互有联系，因此也就产生了许多对传统方法拓展的研究连接的方法。</p>
+<p>假设目标和联系之间独立。</p>
+<p>HIN分类过程有一些新的特点：</p>
+<ul>
+<li>同时进行多个分类过程</li>
+<li>标签信息可以在整个网络中进行传播，分类过程可看做知识传播过程</li>
+<li>多标签分类在HIN中很流行</li>
+<li>meta path在HIN分类中广泛使用</li>
+</ul>
+<h3 id="D-链路预测"><a href="#D-链路预测" class="headerlink" title="D 链路预测"></a>D 链路预测</h3><p>链路预测用来估计两个节点之间是否有连接的可能性，链路预测可看做二分类问题：有还是没有联系。</p>
+<p>分为两种方法：基于结构性质的和基于属性信息的。</p>
+<p>在使用了元路径之后。许多工作使用了两步走的方法来解决HIN中的链路预测</p>
+<ol>
+<li>提取基于元路径的特征向量</li>
+<li>训练一个回归或分类模型</li>
+</ol>
+<p>概率模型同样广泛应用。<br>多HIN之间的链路预测以及动态HIN也有相应的研究。</p>
+<h3 id="E-排序"><a href="#E-排序" class="headerlink" title="E 排序"></a>E 排序</h3><p>排序也是一个重要挖掘方向，在算法基础上评估目标重要性和流行程度</p>
+<p>HIN排序挑战在于：</p>
+<ul>
+<li>不同类型的节点和联系</li>
+<li>不同类型的节点有不同的语义信息</li>
+</ul>
+<h3 id="F-推荐"><a href="#F-推荐" class="headerlink" title="F 推荐"></a>F 推荐</h3><p>HIN因为具有丰富的语义和综合信息往往能产生更好的推荐效果。元路径被用来探索物体间的联系，此外大量的方法尝试去融合各种各样的信息。</p>
+<h3 id="G-信息融合"><a href="#G-信息融合" class="headerlink" title="G 信息融合"></a>G 信息融合</h3><p>信息融合表示从不同的概念、文本中合并信息。随着HIN的兴起，在多个HIN中进行信息融合是一个重要的课题。</p>
+<p>HIN信息融合的一个重要前提条件是对HIN中共享的公共实体进行排列</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hin/" rel="tag"><i class="fa fa-tag"></i> hin</a>
+          
+            <a href="/tags/论文/" rel="tag"><i class="fa fa-tag"></i> 论文</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/10/研究生规划/" rel="next" title="研究生规划">
+                <i class="fa fa-chevron-left"></i> 研究生规划
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hfzh</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-相似性度量"><span class="nav-number">1.1.</span> <span class="nav-text">A 相似性度量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-聚类"><span class="nav-number">1.2.</span> <span class="nav-text">B 聚类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-分类"><span class="nav-number">1.3.</span> <span class="nav-text">C 分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-链路预测"><span class="nav-number">1.4.</span> <span class="nav-text">D 链路预测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#E-排序"><span class="nav-number">1.5.</span> <span class="nav-text">E 排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F-推荐"><span class="nav-number">1.6.</span> <span class="nav-text">F 推荐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G-信息融合"><span class="nav-number">1.7.</span> <span class="nav-text">G 信息融合</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hfzh</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
