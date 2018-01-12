@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-11T11:23:17.011Z</updated>
+  <updated>2018-01-12T03:39:06.941Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/01/11/%E5%BC%82%E8%B4%A8%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A22/"/>
     <id>http://yoursite.com/2018/01/11/异质网络初探2/</id>
     <published>2018-01-11T08:04:20.000Z</published>
-    <updated>2018-01-11T11:23:17.011Z</updated>
+    <updated>2018-01-12T03:39:06.941Z</updated>
     
     <content type="html"><![CDATA[<p>下面对《A Survey of Heterogeneous Information Network Analysis》一文中第3部分RESEARCH DEVELOPMENTS进行阅读</p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>作者对hin的数据挖掘任务分为了7类，如下图所示</p><p><img src="/images/1.11-hin/hin-category.PNG" alt="example"></p><h3 id="A-相似性度量"><a href="#A-相似性度量" class="headerlink" title="A 相似性度量"></a>A 相似性度量</h3><p>分为两种方法：基于特征的和基于连接的</p><ul><li>基于特征的使用特征值，有余弦相似性，皮尔森相似性等</li><li>基于连接的使用图中的连接信息</li></ul><p>在HIN上进行相似性度量的限制是元路径，因为不同元路径语义不同。</p><p>下面列出相似性的方法</p><ul><li>PathSim基于对称路径来衡量同种类型节点</li><li>HeteSim衡量不同类型节点相似性</li><li>AvgSim使用两个对称Random Walk来衡量相似性</li><li>后来又加入了其他信息如社交影响来衡量相似性</li></ul><h3 id="B-聚类"><a href="#B-聚类" class="headerlink" title="B 聚类"></a>B 聚类</h3><ul><li>传统聚类是基于目标特征，HIN聚类使用丰富的属性信息。</li><li>文本信息在HIN挖掘中同样扮演着重要角色</li><li>同样加入了用户指导信息</li><li>聚类常常和其他挖掘任务集合在一起</li><li>边缘点检测和聚类任务有强相关性。</li></ul><h3 id="C-分类"><a href="#C-分类" class="headerlink" title="C 分类"></a>C 分类</h3><p>传统ML方法认为目标之间相互独立同分布，然而现实中目标之间相互有联系，因此也就产生了许多对传统方法拓展的研究连接的方法。</p><p>假设目标和联系之间独立。</p><p>HIN分类过程有一些新的特点：</p><ul><li>同时进行多个分类过程</li><li>标签信息可以在整个网络中进行传播，分类过程可看做知识传播过程</li><li>多标签分类在HIN中很流行</li><li>meta path在HIN分类中广泛使用</li></ul><h3 id="D-链路预测"><a href="#D-链路预测" class="headerlink" title="D 链路预测"></a>D 链路预测</h3><p>链路预测用来估计两个节点之间是否有连接的可能性，链路预测可看做二分类问题：有还是没有联系。</p><p>分为两种方法：基于结构性质的和基于属性信息的。</p><p>在使用了元路径之后。许多工作使用了两步走的方法来解决HIN中的链路预测</p><ol><li>提取基于元路径的特征向量</li><li>训练一个回归或分类模型</li></ol><p>概率模型同样广泛应用。<br>多HIN之间的链路预测以及动态HIN也有相应的研究。</p><h3 id="E-排序"><a href="#E-排序" class="headerlink" title="E 排序"></a>E 排序</h3><p>排序也是一个重要挖掘方向，在算法基础上评估目标重要性和流行程度</p><p>HIN排序挑战在于：</p><ul><li>不同类型的节点和联系</li><li>不同类型的节点有不同的语义信息</li></ul><h3 id="F-推荐"><a href="#F-推荐" class="headerlink" title="F 推荐"></a>F 推荐</h3><p>HIN因为具有丰富的语义和综合信息往往能产生更好的推荐效果。元路径被用来探索物体间的联系，此外大量的方法尝试去融合各种各样的信息。</p><h3 id="G-信息融合"><a href="#G-信息融合" class="headerlink" title="G 信息融合"></a>G 信息融合</h3><p>信息融合表示从不同的概念、文本中合并信息。随着HIN的兴起，在多个HIN中进行信息融合是一个重要的课题。</p><p>HIN信息融合的一个重要前提条件是对HIN中共享的公共实体进行排列</p>]]></content>
     
@@ -35,6 +35,8 @@
     
     </summary>
     
+      <category term="数据挖掘" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
+    
     
       <category term="hin" scheme="http://yoursite.com/tags/hin/"/>
     
@@ -47,7 +49,7 @@
     <link href="http://yoursite.com/2018/01/10/%E7%A0%94%E7%A9%B6%E7%94%9F%E8%A7%84%E5%88%92/"/>
     <id>http://yoursite.com/2018/01/10/研究生规划/</id>
     <published>2018-01-10T03:03:45.000Z</published>
-    <updated>2018-01-11T16:47:39.514Z</updated>
+    <updated>2018-01-12T03:39:04.331Z</updated>
     
     <content type="html"><![CDATA[<p>今天睡不着觉，写一下这两年的规划。不能在2年后失业</p><h2 id="从招聘要求出发"><a href="#从招聘要求出发" class="headerlink" title="从招聘要求出发"></a>从招聘要求出发</h2><p>这里给出<a href="https://campus.alibaba.com/traineePositions.htm?refno=11901" target="_blank" rel="noopener">阿里实习生机器学习算法岗招聘要求</a><br>总结如下：<br><strong>岗位描述</strong>：</p><ul><li>ML/DL RL 推荐 迁移学习 特征提取等等</li><li>分布式算法 提高算法性能</li><li>大数据建模 ML/DL应用</li></ul><p><strong>岗位要求</strong>：</p><ul><li>熟悉机器学习/深度学习算法</li><li>在模式识别、深度学习等工程实现能力</li><li>精通C/C++ Java Python 等至少一门语言</li><li>数理基础扎实</li></ul><p><strong>优先项</strong></p><ul><li>论文发表</li><li>Linux下开发</li><li>有大赛参加经验</li><li>deeplearning经验</li><li>大规模数据处理经验<h2 id="需要的能力"><a href="#需要的能力" class="headerlink" title="需要的能力"></a>需要的能力</h2></li><li>python/java</li><li>熟悉ML/DL算法</li><li>掌握Linux/分布式</li><li>在某一领域深入<h2 id="19-6目标"><a href="#19-6目标" class="headerlink" title="19.6目标"></a>19.6目标</h2>还有一年半的时间，给自己立个flag</li><li>深入掌握各种算法</li><li>有java/python 开发能力</li><li>在RS HIN DL等某一方面有研究成果</li><li>基础扎实 </li></ul><p><strong>目标阿里算法岗</strong></p>]]></content>
     
@@ -61,6 +63,8 @@
     
     </summary>
     
+      <category term="规划" scheme="http://yoursite.com/categories/%E8%A7%84%E5%88%92/"/>
+    
     
       <category term="研究生" scheme="http://yoursite.com/tags/%E7%A0%94%E7%A9%B6%E7%94%9F/"/>
     
@@ -73,7 +77,7 @@
     <link href="http://yoursite.com/2018/01/09/hexo%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2018/01/09/hexo使用总结/</id>
     <published>2018-01-09T12:40:21.000Z</published>
-    <updated>2018-01-09T13:29:49.791Z</updated>
+    <updated>2018-01-12T03:40:45.851Z</updated>
     
     <content type="html"><![CDATA[<p>一些hexo常用命令总是容易忘，这里写一篇文章来记录典型的操作。</p><h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><pre><code>$ hexo new &quot;new article&quot;</code></pre><p>就会在_post下面生成一个new article.md文章</p>]]></content>
     
@@ -87,6 +91,8 @@
     
     </summary>
     
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
@@ -99,7 +105,7 @@
     <link href="http://yoursite.com/2018/01/06/%E5%BC%82%E8%B4%A8%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/"/>
     <id>http://yoursite.com/2018/01/06/异质网络初探/</id>
     <published>2018-01-06T08:38:55.000Z</published>
-    <updated>2018-01-09T12:18:37.323Z</updated>
+    <updated>2018-01-12T03:38:25.005Z</updated>
     
     <content type="html"><![CDATA[<p>本篇文章是在《A Survey of Heterogeneous Information Network Analysis》的基础上，对异质网络进行初步的分析和学习。<br>同质网络中的节点和联系都是同一种类型，而异质网络包含丰富结构和语义信息，其边和节点类型不是唯一的。<br>现实世界中异质信息网络无处不在。</p><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="定义1-信息网络"><a href="#定义1-信息网络" class="headerlink" title="定义1 信息网络"></a><strong>定义1 信息网络</strong></h3><pre><code>有向图G=（V,E）V为节点信息 E为边（联系）信息</code></pre><h3 id="定义2-异质信息网络"><a href="#定义2-异质信息网络" class="headerlink" title="定义2 异质信息网络"></a><strong>定义2 异质信息网络</strong></h3><pre><code>如果信息网络中节点类型或边类型大于1，则称之为异质信息网络</code></pre><p><img src="/images/1.9-hin/hin-example.PNG" alt="example"></p><h3 id="定义3-网络模式"><a href="#定义3-网络模式" class="headerlink" title="定义3 网络模式"></a><strong>定义3 网络模式</strong></h3><pre><code>模式定义了网络中基本的关系</code></pre><p><img src="/images/1.9-hin/schema-example.PNG" alt="example"></p><h3 id="定义4-元路径"><a href="#定义4-元路径" class="headerlink" title="定义4 元路径"></a><strong>定义4 元路径</strong></h3><pre><code>元路径是基于网络模式来定义的，元路径又包含有对称路径、连接路径等等每一条原路径都有自身的意义。不同原路径上相似性的定义是不同的。</code></pre><h2 id="不同概念的比较"><a href="#不同概念的比较" class="headerlink" title="不同概念的比较"></a>不同概念的比较</h2><h3 id="同质VS异质"><a href="#同质VS异质" class="headerlink" title="同质VS异质"></a>同质VS异质</h3><pre><code>异质网络边或节点类型大于1，同质网络可以看做是异质网络的一种。</code></pre><h3 id="异质VS多联系网络（多模态网络、复合网络）"><a href="#异质VS多联系网络（多模态网络、复合网络）" class="headerlink" title="异质VS多联系网络（多模态网络、复合网络）"></a>异质VS多联系网络（多模态网络、复合网络）</h3><pre><code>多联系网络只有一种实体，有多种联系类型</code></pre><h2 id="异质网络的例子"><a href="#异质网络的例子" class="headerlink" title="异质网络的例子"></a>异质网络的例子</h2><pre><code>交互式系统可被视为异质网络</code></pre><h3 id="单节点类型的多联系网络"><a href="#单节点类型的多联系网络" class="headerlink" title="单节点类型的多联系网络"></a>单节点类型的多联系网络</h3><pre><code>社交网络中较为常见</code></pre><h3 id="双边网络"><a href="#双边网络" class="headerlink" title="双边网络"></a>双边网络</h3><h3 id="星模式网络"><a href="#星模式网络" class="headerlink" title="星模式网络"></a>星模式网络</h3><pre><code>星模式网络用不同的形状来代表不同类型的节点</code></pre><h3 id="多中心网络"><a href="#多中心网络" class="headerlink" title="多中心网络"></a>多中心网络</h3><h2 id="为什么进行异质网络分析"><a href="#为什么进行异质网络分析" class="headerlink" title="为什么进行异质网络分析"></a>为什么进行异质网络分析</h2><ul><li>数据挖掘发展新发现，解决社交网络信息</li><li>便于融合更多的信息</li><li>异质网络包含丰富的语义信息</li></ul>]]></content>
     
@@ -111,6 +117,8 @@
       
     
     </summary>
+    
+      <category term="数据挖掘" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
     
     
       <category term="HIN" scheme="http://yoursite.com/tags/HIN/"/>

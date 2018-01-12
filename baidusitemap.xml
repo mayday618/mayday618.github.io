@@ -4,48 +4,9 @@
 
     
     
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/10/%E7%A0%94%E7%A9%B6%E7%94%9F%E8%A7%84%E5%88%92/</loc>
-    <lastmod>2018-01-11T16:47:39.514Z</lastmod>
-    <data>
-        <display>
-        <title>研究生规划</title>
-        <pubTime>2018-01-10T03:03:45.000Z</pubTime>
-        
-        <tag>研究生</tag>
-         
-        <tag>规划</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/11/%E5%BC%82%E8%B4%A8%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A22/</loc>
-    <lastmod>2018-01-11T11:23:17.011Z</lastmod>
-    <data>
-        <display>
-        <title>异质网络初探2</title>
-        <pubTime>2018-01-11T08:04:20.000Z</pubTime>
-        
-        <tag>hin</tag>
-         
-        <tag>论文</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>http://yoursite.com/2018/01/09/hexo%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-01-09T13:29:49.791Z</lastmod>
+    <lastmod>2018-01-12T03:40:45.851Z</lastmod>
     <data>
         <display>
         <title>hexo使用总结</title>
@@ -57,6 +18,54 @@
          
          
            
+             
+              <breadCrumb title="前端" url="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/11/%E5%BC%82%E8%B4%A8%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A22/</loc>
+    <lastmod>2018-01-12T03:39:06.941Z</lastmod>
+    <data>
+        <display>
+        <title>异质网络初探2</title>
+        <pubTime>2018-01-11T08:04:20.000Z</pubTime>
+        
+        <tag>hin</tag>
+         
+        <tag>论文</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据挖掘" url="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/01/10/%E7%A0%94%E7%A9%B6%E7%94%9F%E8%A7%84%E5%88%92/</loc>
+    <lastmod>2018-01-12T03:39:04.331Z</lastmod>
+    <data>
+        <display>
+        <title>研究生规划</title>
+        <pubTime>2018-01-10T03:03:45.000Z</pubTime>
+        
+        <tag>研究生</tag>
+         
+        <tag>规划</tag>
+         
+         
+           
+             
+              <breadCrumb title="规划" url="http://yoursite.com/categories/%E8%A7%84%E5%88%92/"/>
+          
         </display>
     </data>
     </url>
@@ -64,7 +73,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/01/06/%E5%BC%82%E8%B4%A8%E7%BD%91%E7%BB%9C%E5%88%9D%E6%8E%A2/</loc>
-    <lastmod>2018-01-09T12:18:37.323Z</lastmod>
+    <lastmod>2018-01-12T03:38:25.005Z</lastmod>
     <data>
         <display>
         <title>异质网络初探</title>
@@ -76,6 +85,9 @@
          
          
            
+             
+              <breadCrumb title="数据挖掘" url="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/"/>
+          
         </display>
     </data>
     </url>
